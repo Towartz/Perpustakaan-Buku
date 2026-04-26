@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Perpustakaan Digital</title>
+  <title>Perpustakaan Digital Fakultas Teknologi Informasi</title>
 
   <style>
     :root {
@@ -243,7 +243,7 @@
       position: relative;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 1.5fr 0.5fr;
+      grid-template-columns: 1fr;
       gap: 14px;
       padding: 18px;
       border-radius: 24px;
@@ -265,110 +265,10 @@
     }
 
     .hero-content,
-    .hero-card {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-kicker {
-      width: fit-content;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255, 237, 213, 0.16);
-      color: #ffedd5;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 9px;
-      border: 1px solid rgba(255, 237, 213, 0.15);
-    }
-
-    .hero h3 {
-      max-width: 680px;
-      font-size: clamp(24px, 4vw, 38px);
-      line-height: 1.04;
-      letter-spacing: -0.9px;
-      margin-bottom: 9px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .search-box {
-      display: flex;
-      gap: 8px;
-      padding: 7px;
-      border-radius: 16px;
-      background: rgba(255, 237, 213, 0.13);
-      border: 1px solid rgba(255, 237, 213, 0.18);
-    }
-
-    .search-box input {
-      width: 100%;
-      min-width: 0;
-      border: 0;
-      border-radius: 12px;
-      padding: 11px 13px;
-      color: var(--text);
-      background: white;
-      font-size: 13px;
-    }
-
-    .search-box button {
-      border: 0;
-      border-radius: 12px;
-      padding: 0 16px;
-      background: var(--gradient-primary-button);
-      color: white;
-      font-weight: 800;
-      font-size: 13px;
-      white-space: nowrap;
-      transition: 160ms ease;
-      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.18);
-    }
-
-    .search-box button:hover {
-      background: var(--gradient-primary-button-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.22);
-    }
-
-    .hero-card {
-      display: grid;
-      align-content: center;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255, 237, 213, 0.13);
-      border: 1px solid rgba(255, 237, 213, 0.20);
-    }
-
-    .hero-card img {
-      width: 86px;
-      height: 86px;
-      padding: 7px;
-      border-radius: 16px;
-      background: white;
-    }
-
-    .hero-card h4 {
-      font-size: 17px;
-      margin-bottom: 4px;
-    }
-
-    .hero-card p {
-      margin: 0;
-      font-size: 12px;
-      line-height: 1.4;
-    }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-bottom: 14px;
     }
@@ -619,12 +519,14 @@
 
     .book-actions {
       display: grid;
-      grid-template-columns: 1fr 38px;
+      grid-template-columns: 1fr;
       gap: 7px;
       margin-top: auto;
     }
 
     .read-btn {
+      width: 100%;
+      border: 0;
       min-height: 38px;
       display: grid;
       place-items: center;
@@ -643,27 +545,6 @@
       box-shadow: 0 10px 22px rgba(249, 115, 22, 0.2);
     }
 
-    .qr-btn {
-      border: 1px solid #fed7aa;
-      min-height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #ffedd5;
-      color: #9a3412;
-      transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
-    }
-
-    .qr-btn:hover {
-      background: #fed7aa;
-      border-color: #fdba74;
-      transform: translateY(-1px);
-    }
-
-    .qr-btn svg {
-      width: 19px;
-      height: 19px;
-    }
 
     .empty {
       display: none;
@@ -830,12 +711,9 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-card {
-        display: none;
-      }
 
       .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .stat {
@@ -872,7 +750,7 @@
       }
 
       .topbar h2 {
-        font-size: 21px;
+        font-size: 18px;
       }
 
       .topbar p {
@@ -1003,8 +881,7 @@
         gap: 7px;
       }
 
-      .read-btn,
-      .qr-btn {
+      .read-btn {
         min-height: 36px;
       }
 
@@ -1085,8 +962,8 @@
         </div>
 
         <div class="brand-text">
-          <h1>Perpustakaan Digital</h1>
-          <p>Scan, baca, dan kelola buku.</p>
+          <h1>Perpustakaan Digital FTI</h1>
+          <p>Fakultas Teknologi Informasi.</p>
         </div>
       </div>
 
@@ -1116,8 +993,8 @@
       <div class="page">
         <header class="topbar">
           <div>
-            <h2>Perpustakaan Digital</h2>
-            <p>Koleksi buku akademik utama.</p>
+            <h2>Perpustakaan Digital Fakultas Teknologi Informasi</h2>
+            <p>Koleksi buku akademik Fakultas Teknologi Informasi.</p>
           </div>
 
           <div class="admin-chip">
@@ -1128,22 +1005,14 @@
 
         <section class="hero">
           <div class="hero-content">
-            <div class="hero-kicker">Koleksi digital berbasis QR</div>
+            <div class="hero-kicker">Fakultas Teknologi Informasi</div>
             <h3>Akses buku cepat, rapi, dan mudah discan.</h3>
-            <p>Cari buku, lalu buka file atau tampilkan QR besar.</p>
+            <p>Cari buku, lalu klik Baca Buku untuk menampilkan QR besar.</p>
 
             <div class="search-box">
               <input id="searchInput" type="text" placeholder="Cari judul atau penulis..." oninput="filterBooks()">
               <button onclick="filterBooks()">Cari</button>
             </div>
-          </div>
-
-          <div class="hero-card">
-            <div>
-              <h4>QR Utama</h4>
-              <p>QR halaman perpustakaan.</p>
-            </div>
-            <img id="mainQrSmall" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com/perpustakaan-digital" alt="QR utama">
           </div>
         </section>
 
@@ -1175,24 +1044,13 @@
 
           
 
-          <article class="stat">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 4h6v6H4V4ZM14 4h6v6h-6V4ZM4 14h6v6H4v-6ZM14 14h2v2h-2v-2ZM18 14h2v6h-6v-2h4v-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>QR</h4>
-              <p>Akses Cepat</p>
-            </div>
-          </article>
         </section>
 
         <section id="koleksi">
           <div class="section-head">
             <div>
               <h3>Koleksi Buku</h3>
-              <p>4 koleksi utama dengan label yang jelas.</p>
+              <p>4 koleksi utama Fakultas Teknologi Informasi.</p>
             </div>
 
             <span class="result-pill" id="resultCount">0 buku tampil</span>
@@ -1280,11 +1138,6 @@
 
     let activeCategory = "Semua";
 
-    const qrIcon = `
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 4h6v6H4V4ZM14 4h6v6h-6V4ZM4 14h6v6H4v-6ZM14 14h2v2h-2v-2ZM18 14h2v6h-6v-2h4v-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-    `;
 
     function qrUrl(link, size) {
       return "https://api.qrserver.com/v1/create-qr-code/?size=" + size + "x" + size + "&data=" + encodeURIComponent(link);
@@ -1345,10 +1198,7 @@
               </div>
 
               <div class="book-actions">
-                <a class="read-btn" href="${safeText(book.link)}" target="_blank" rel="noopener noreferrer">Baca Buku</a>
-                <button class="qr-btn" onclick="openQr('${safeJs(book.title)}', '${safeJs(book.link)}')" aria-label="Tampilkan QR ${safeText(book.title)}">
-                  ${qrIcon}
-                </button>
+                <button class="read-btn" onclick="openQr('${safeJs(book.title)}', '${safeJs(book.link)}')" aria-label="Tampilkan QR ${safeText(book.title)}">Baca Buku</button>
               </div>
             </div>
           </article>
