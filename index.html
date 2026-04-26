@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Perpustakaan Digital Fakultas Teknologi Informasi</title>
 
   <style>
@@ -11,36 +10,19 @@
       --bg: #f6efe7;
       --surface: #ffffff;
       --surface-soft: #fff8f1;
-      --surface-warm: #fff3e6;
-
       --text: #16120f;
       --muted: #7a6a5d;
       --line: #ead8c7;
-
       --primary: #f97316;
       --primary-dark: #9a3412;
       --primary-soft: #ffedd5;
-
-      --black: #0d0d0d;
-      --black-2: #18120d;
-      --black-3: #26180f;
-
-      --gradient-main: linear-gradient(135deg, #0d0d0d 0%, #2a1608 48%, #f97316 100%);
-      --gradient-sidebar:
-        radial-gradient(circle at top, rgba(249, 115, 22, 0.22), transparent 35%),
-        linear-gradient(180deg, #0d0d0d 0%, #18120d 55%, #321606 100%);
-
-      --gradient-primary-button: linear-gradient(135deg, #111111 0%, #7c2d12 62%, #ea580c 100%);
-      --gradient-primary-button-hover: linear-gradient(135deg, #000000 0%, #9a3412 62%, #f97316 100%);
-
-      --button-soft: #ffedd5;
-      --button-soft-hover: #fed7aa;
-      --button-dark: #18120d;
-
+      --gradient-main: linear-gradient(135deg, #0d0d0d 0%, #2a1608 52%, #f97316 100%);
+      --gradient-sidebar: radial-gradient(circle at top, rgba(249, 115, 22, 0.22), transparent 35%), linear-gradient(180deg, #0d0d0d 0%, #18120d 55%, #321606 100%);
+      --gradient-button: linear-gradient(135deg, #111111 0%, #7c2d12 62%, #ea580c 100%);
+      --gradient-button-hover: linear-gradient(135deg, #000000 0%, #9a3412 62%, #f97316 100%);
       --shadow: 0 10px 28px rgba(24, 18, 13, 0.08);
       --shadow-hover: 0 18px 42px rgba(24, 18, 13, 0.16);
       --orange-glow: 0 18px 45px rgba(249, 115, 22, 0.24);
-
       --sidebar: 230px;
     }
 
@@ -56,10 +38,7 @@
 
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(13, 13, 13, 0.12), transparent 26%),
-        linear-gradient(180deg, #fff8f1 0%, #f6efe7 48%, #efe2d5 100%);
+      background: radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 28%), radial-gradient(circle at top right, rgba(13, 13, 13, 0.12), transparent 26%), linear-gradient(180deg, #fff8f1 0%, #f6efe7 48%, #efe2d5 100%);
       color: var(--text);
       font-family: Arial, sans-serif;
     }
@@ -120,13 +99,16 @@
       box-shadow: 0 12px 28px rgba(249, 115, 22, 0.28);
     }
 
-    .brand-logo svg {
-      width: 24px;
-      height: 24px;
+    .brand-logo svg,
+    .nav-link svg,
+    .stat-icon svg,
+    .mobile-nav svg {
+      width: 22px;
+      height: 22px;
     }
 
     .brand h1 {
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.2;
     }
 
@@ -157,12 +139,6 @@
     .nav-link.active {
       color: white;
       background: rgba(249, 115, 22, 0.18);
-    }
-
-    .nav-link svg {
-      width: 19px;
-      height: 19px;
-      flex: 0 0 auto;
     }
 
     .side-card {
@@ -204,8 +180,9 @@
     }
 
     .topbar h2 {
+      max-width: 760px;
       font-size: 24px;
-      line-height: 1.1;
+      line-height: 1.12;
       letter-spacing: -0.4px;
     }
 
@@ -235,16 +212,13 @@
       place-items: center;
       border-radius: 50%;
       color: white;
-      background: var(--gradient-primary-button);
+      background: var(--gradient-button);
       font-weight: 800;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
       padding: 18px;
       border-radius: 24px;
       color: white;
@@ -264,7 +238,78 @@
       background: rgba(255, 237, 213, 0.17);
     }
 
-    .hero-content,
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero-kicker {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 237, 213, 0.16);
+      color: #ffedd5;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 9px;
+      border: 1px solid rgba(255, 237, 213, 0.15);
+    }
+
+    .hero h3 {
+      max-width: 680px;
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.04;
+      letter-spacing: -0.9px;
+      margin-bottom: 9px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 8px;
+      padding: 7px;
+      border-radius: 16px;
+      background: rgba(255, 237, 213, 0.13);
+      border: 1px solid rgba(255, 237, 213, 0.18);
+    }
+
+    .search-box input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 13px;
+      color: var(--text);
+      background: white;
+      font-size: 13px;
+    }
+
+    .search-box button {
+      border: 0;
+      border-radius: 12px;
+      padding: 0 16px;
+      background: var(--gradient-button);
+      color: white;
+      font-weight: 800;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: 160ms ease;
+      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.18);
+    }
+
+    .search-box button:hover {
+      background: var(--gradient-button-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.22);
+    }
 
     .stats {
       display: grid;
@@ -347,44 +392,6 @@
       white-space: nowrap;
     }
 
-    .categories {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 2px 2px 8px;
-      margin-bottom: 4px;
-      scrollbar-width: thin;
-    }
-
-    .category-btn {
-      min-height: 38px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0 13px;
-      background: rgba(255, 255, 255, 0.94);
-      color: #3d3025;
-      font-size: 13px;
-      box-shadow: 0 6px 18px rgba(24, 24, 24, 0.04);
-      font-weight: 800;
-      white-space: nowrap;
-      transition: 160ms ease;
-    }
-
-    .category-btn:hover {
-      background: #ffedd5;
-      border-color: #fed7aa;
-      color: #9a3412;
-      transform: translateY(-1px);
-    }
-
-    .category-btn.active {
-      background: #18120d;
-      border-color: #18120d;
-      color: #ffedd5;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(24, 18, 13, 0.16);
-    }
-
     .books {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -448,6 +455,7 @@
       display: flex;
       flex-direction: column;
       flex: 1;
+      min-width: 0;
     }
 
     .book-title {
@@ -472,8 +480,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
-
 
     .book-label {
       width: fit-content;
@@ -526,13 +532,13 @@
 
     .read-btn {
       width: 100%;
-      border: 0;
       min-height: 38px;
       display: grid;
       place-items: center;
+      border: 0;
       border-radius: 12px;
       color: white;
-      background: var(--gradient-primary-button);
+      background: var(--gradient-button);
       font-size: 12px;
       font-weight: 900;
       transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
@@ -540,11 +546,10 @@
     }
 
     .read-btn:hover {
-      background: var(--gradient-primary-button-hover);
+      background: var(--gradient-button-hover);
       transform: translateY(-1px);
       box-shadow: 0 10px 22px rgba(249, 115, 22, 0.2);
     }
-
 
     .empty {
       display: none;
@@ -587,7 +592,6 @@
         opacity: 0;
         transform: translateY(12px) scale(0.96);
       }
-
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -635,12 +639,12 @@
       display: grid;
       place-items: center;
       color: white;
-      background: var(--gradient-primary-button);
+      background: var(--gradient-button);
       box-shadow: 0 8px 18px rgba(249, 115, 22, 0.15);
     }
 
     .modal-actions a:hover {
-      background: var(--gradient-primary-button-hover);
+      background: var(--gradient-button-hover);
     }
 
     .modal-actions button {
@@ -707,22 +711,8 @@
         padding: 14px;
       }
 
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .stat {
-        display: block;
-        min-height: 0;
-      }
-
-      .stat-icon {
-        margin-bottom: 9px;
+        min-height: 72px;
       }
 
       .books {
@@ -751,6 +741,8 @@
 
       .topbar h2 {
         font-size: 18px;
+        line-height: 1.18;
+        letter-spacing: -0.2px;
       }
 
       .topbar p {
@@ -791,7 +783,6 @@
       }
 
       .stat {
-        display: flex;
         min-height: 68px;
         padding: 10px;
         border-radius: 15px;
@@ -800,7 +791,6 @@
       .stat-icon {
         width: 36px;
         height: 36px;
-        margin-bottom: 0;
       }
 
       .stat h4 {
@@ -821,13 +811,6 @@
 
       .section-head p {
         font-size: 12px;
-      }
-
-      .categories {
-        margin-left: -12px;
-        margin-right: -12px;
-        padding-left: 12px;
-        padding-right: 12px;
       }
 
       .books {
@@ -867,8 +850,14 @@
       }
 
       .author {
+        min-height: 0;
         font-size: 11px;
         margin-bottom: 7px;
+      }
+
+      .book-label {
+        margin-bottom: 8px;
+        font-size: 10px;
       }
 
       .meta {
@@ -877,15 +866,12 @@
 
       .book-actions {
         margin-top: 8px;
-        grid-template-columns: 1fr 36px;
-        gap: 7px;
+        grid-template-columns: 1fr;
+        gap: 0;
       }
 
       .read-btn {
         min-height: 36px;
-      }
-
-      .read-btn {
         font-size: 11px;
       }
 
@@ -945,6 +931,15 @@
       .book-title {
         font-size: 12.5px;
       }
+
+      .section-head {
+        align-items: flex-start;
+      }
+
+      .result-pill {
+        font-size: 11px;
+        padding: 7px 9px;
+      }
     }
   </style>
 </head>
@@ -953,17 +948,16 @@
   <div class="app">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-logo">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
             <path d="M5 4.5C5 3.67 5.67 3 6.5 3H20v15.5H7.5A2.5 2.5 0 0 0 5 21V4.5Z" stroke="currentColor" stroke-width="2"/>
             <path d="M5 18.5A2.5 2.5 0 0 1 7.5 16H20" stroke="currentColor" stroke-width="2"/>
             <path d="M9 7h7M9 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-
         <div class="brand-text">
           <h1>Perpustakaan Digital FTI</h1>
-          <p>Fakultas Teknologi Informasi.</p>
+          <p>Scan dan baca buku.</p>
         </div>
       </div>
 
@@ -976,7 +970,6 @@
             <span>Beranda</span>
           </a>
         </li>
-
         <li>
           <a class="nav-link" href="#koleksi">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -987,6 +980,11 @@
           </a>
         </li>
       </ul>
+
+      <div class="side-card">
+        <h3>QR Buku</h3>
+        <p>Klik Baca Buku untuk menampilkan QR besar sesuai buku.</p>
+      </div>
     </aside>
 
     <main class="main">
@@ -996,7 +994,6 @@
             <h2>Perpustakaan Digital Fakultas Teknologi Informasi</h2>
             <p>Koleksi buku akademik Fakultas Teknologi Informasi.</p>
           </div>
-
           <div class="admin-chip">
             <div class="avatar">Z</div>
             <span>Admin</span>
@@ -1008,7 +1005,6 @@
             <div class="hero-kicker">Fakultas Teknologi Informasi</div>
             <h3>Akses buku cepat, rapi, dan mudah discan.</h3>
             <p>Cari buku, lalu klik Baca Buku untuk menampilkan QR besar.</p>
-
             <div class="search-box">
               <input id="searchInput" type="text" placeholder="Cari judul atau penulis..." oninput="filterBooks()">
               <button onclick="filterBooks()">Cari</button>
@@ -1041,9 +1037,6 @@
               <p>Pengguna</p>
             </div>
           </article>
-
-          
-
         </section>
 
         <section id="koleksi">
@@ -1052,7 +1045,6 @@
               <h3>Koleksi Buku</h3>
               <p>4 koleksi utama Fakultas Teknologi Informasi.</p>
             </div>
-
             <span class="result-pill" id="resultCount">0 buku tampil</span>
           </div>
 
@@ -1070,7 +1062,6 @@
       </svg>
       Home
     </a>
-
     <a href="#koleksi">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H7a3 3 0 0 0-3 3V5.5Z" stroke="currentColor" stroke-width="2"/>
@@ -1080,11 +1071,10 @@
   </nav>
 
   <div class="modal" id="qrModal">
-    <div class="modal-box">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <h3 id="modalTitle">QR Buku</h3>
       <p>Scan QR ini untuk membuka file buku.</p>
       <img id="modalQr" src="" alt="QR buku">
-
       <div class="modal-actions">
         <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer">Buka Buku</a>
         <button onclick="closeQr()">Tutup</button>
@@ -1102,7 +1092,7 @@
         pages: "120 hlm",
         year: "2024",
         cover: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop",
-        link: "#"
+        link: "https://example.com/panduan-penulisan-skripsi.pdf"
       },
       {
         title: "Metodologi Penelitian",
@@ -1112,7 +1102,7 @@
         pages: "110 hlm",
         year: "2024",
         cover: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=900&auto=format&fit=crop",
-        link: "#"
+        link: "https://example.com/metodologi-penelitian.pdf"
       },
       {
         title: "Pedoman Karya Tulis Ilmiah",
@@ -1122,7 +1112,7 @@
         pages: "96 hlm",
         year: "2024",
         cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=900&auto=format&fit=crop",
-        link: "#"
+        link: "https://example.com/pedoman-karya-tulis-ilmiah.pdf"
       },
       {
         title: "Panduan Sitasi dan Referensi",
@@ -1132,12 +1122,9 @@
         pages: "84 hlm",
         year: "2024",
         cover: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=900&auto=format&fit=crop",
-        link: "#"
+        link: "https://example.com/panduan-sitasi-dan-referensi.pdf"
       }
     ];
-
-    let activeCategory = "Semua";
-
 
     function qrUrl(link, size) {
       return "https://api.qrserver.com/v1/create-qr-code/?size=" + size + "x" + size + "&data=" + encodeURIComponent(link);
@@ -1210,13 +1197,10 @@
       const keyword = document.getElementById("searchInput").value.toLowerCase().trim();
 
       const filtered = books.filter(book => {
-        const matchKeyword =
-          book.title.toLowerCase().includes(keyword) ||
+        return book.title.toLowerCase().includes(keyword) ||
           book.author.toLowerCase().includes(keyword) ||
           book.category.toLowerCase().includes(keyword) ||
           String(book.label || "").toLowerCase().includes(keyword);
-
-        return matchKeyword;
       });
 
       renderBooks(filtered);
